@@ -1,0 +1,63 @@
+body {
+    background-color: transparent;
+    font-family: 'Times New Roman', serif;
+    color: #E0E2DB;
+}
+
+.products-container {
+    display: grid;
+    /* This forces exactly 3 columns on large screens */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    padding: 30px;
+}
+
+.product {
+    position: relative; /* Added to keep promo badge inside the card */
+    background: linear-gradient(to top, #191716, #E6AF2E);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    color: #E0E2DB;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: transform 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #E6AF2E;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.promo {
+    position: absolute;
+    top: 35px; /* Adjusted from bottom to top so it doesn't cover text */
+    left: 35px;
+    background: white;
+    color: black;
+    padding: 5px 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 22px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.Cart button {
+    background-color: #E6AF2E;
+    color: #191716;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.Cart button:hover {
+    background-color: #E0E2DB;
+}
