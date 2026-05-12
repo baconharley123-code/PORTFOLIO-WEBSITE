@@ -11,11 +11,11 @@
 </head>
 <body>
 
-  <div class="noise"></div>
-
+  <!-- NAV -->
   <nav class="nav">
     <span class="nav-name">Harley Bacon</span>
     <div class="nav-links">
+      <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#activities">Activities</a>
       <a href="#skills">Skills</a>
@@ -23,40 +23,39 @@
     </div>
   </nav>
 
-  <header class="hero">
-    <div class="hero-inner">
-      <p class="hero-eyebrow">Web Development Student · Carcar City, Cebu</p>
-      <h1 class="hero-name">Harley<br><em>Bacon</em></h1>
-      <p class="hero-tagline">Entrepreneur, student, and builder —<br>learning the web one activity at a time.</p>
-      <div class="hero-tags">
-        <span class="pill">Business Owner</span>
-        <span class="pill">Web Development</span>
-        <span class="pill">JavaScript</span>
-      </div>
-      <a href="#activities" class="hero-cta">View Activities</a>
-    </div>
-    <div class="hero-decor">
-      <div class="decor-line"></div>
-      <div class="decor-circle"></div>
-      <div class="decor-ring"></div>
-    </div>
-  </header>
-
   <main>
 
+    <!-- HOME -->
+    <section id="home" class="section home-section">
+      <div class="home-inner">
+        <div class="home-photo">
+          <img src="Images/harley.jpg" alt="Harley Bacon" onerror="this.parentElement.classList.add('no-img')">
+          <div class="home-photo-fallback">HB</div>
+        </div>
+        <h1 class="home-title">Welcome to My Portfolio</h1>
+        <p class="home-sub">
+          Featuring all of my activities in <strong>Web Development</strong>.<br>
+          Currently studying <strong>C Programming</strong> and <strong>Web Development</strong>.
+        </p>
+        <div class="home-tags">
+          <span class="pill">Business Owner</span>
+          <span class="pill">Web Development</span>
+          <span class="pill">JavaScript</span>
+        </div>
+      </div>
+    </section>
+
     <!-- ABOUT -->
-    <section id="about" class="section">
+    <section id="about" class="section section-alt">
       <div class="section-inner">
         <div class="section-label">01 &mdash; About</div>
+        <h2 class="section-heading">Kevin Harley C. Bacon</h2>
         <div class="about-grid">
-          <div class="about-photo">
-            <div class="photo-frame">
-              <img src="Images/harley.jpg" alt="Harley Bacon" onerror="this.parentElement.classList.add('no-img')">
-              <div class="photo-placeholder">HB</div>
-            </div>
+          <div class="photo-frame">
+            <img src="Images/harley.jpg" alt="Harley Bacon" onerror="this.parentElement.classList.add('no-img')">
+            <div class="photo-placeholder">HB</div>
           </div>
           <div class="about-text">
-            <h2 class="section-heading">Kevin Harley C. Bacon</h2>
             <p>19 years old, living in Carcar City, Cebu. Founder and owner of SHO Rent-A-Car &amp; Transport Services, and a web development student building his skills one project at a time.</p>
             <p>Hobbies include playing games, exercising, watching movies and series. Favorite number is 2, and favorite color is green.</p>
             <div class="about-stats">
@@ -79,12 +78,11 @@
     </section>
 
     <!-- ACTIVITIES -->
-    <section id="activities" class="section section-alt">
+    <section id="activities" class="section">
       <div class="section-inner">
         <div class="section-label">02 &mdash; Activities</div>
-        <h2 class="section-heading">Web Development<br>Activities 1 &ndash; 11</h2>
-        <p class="venture-sub">A collection of coursework exploring HTML, CSS, and JavaScript fundamentals.</p>
-
+        <h2 class="section-heading">Web Development Activities 1 &ndash; 11</h2>
+        <p class="section-sub">A collection of coursework exploring HTML, CSS, and JavaScript fundamentals.</p>
         <div class="act-grid">
 
           <div class="act-card">
@@ -191,12 +189,11 @@
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="section">
+    <section id="skills" class="section section-alt">
       <div class="section-inner">
         <div class="section-label">03 &mdash; Skills</div>
         <h2 class="section-heading">Skills &amp; Progress</h2>
-        <p class="venture-sub">Continuously learning and growing — here's where things stand.</p>
-
+        <p class="section-sub">Continuously learning and growing — here's where things stand.</p>
         <div class="skills-progress">
 
           <div class="skill-bar-item">
@@ -248,11 +245,12 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section section-alt">
+    <section id="contact" class="section">
       <div class="section-inner">
         <div class="section-label">04 &mdash; Contact</div>
         <h2 class="section-heading">Let's Connect</h2>
         <div class="contact-grid">
+
           <div class="contact-details">
             <div class="c-item">
               <span class="c-icon">&#9679;</span>
@@ -307,6 +305,7 @@
             <button type="submit" class="submit-btn">Send Message &rarr;</button>
             <p class="form-note" id="form-note"></p>
           </form>
+
         </div>
 
         <div class="map-wrap">
@@ -318,7 +317,7 @@
   </main>
 
   <footer class="footer">
-    <p>&copy; 2026 Harley Bacon &mdash; Web Development Portfolio. All rights reserved.</p>
+    <p>&copy; 2026 Harley Bacon | BSIT-1</p>
   </footer>
 
   <script>
@@ -326,49 +325,18 @@
       e.preventDefault();
       const note = document.getElementById('form-note');
       note.textContent = 'Thanks! Your message has been sent.';
-      note.style.color = '#4a7c4e';
+      note.style.color = '#c9a84c';
       e.target.reset();
     }
 
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
+    // Set skill bar widths and percentages immediately
+    document.querySelectorAll('.skill-bar-item').forEach(item => {
+      const fill = item.querySelector('.skill-bar-fill');
+      const pctEl = item.querySelector('.skill-bar-pct');
+      const target = parseInt(fill.getAttribute('data-width'));
+      fill.style.width = target + '%';
+      pctEl.textContent = target + '%';
     });
-
-    // Animate skill bars when scrolled into view
-    function animateSkillBars() {
-      document.querySelectorAll('.skill-bar-item').forEach(item => {
-        const fill = item.querySelector('.skill-bar-fill');
-        const pctEl = item.querySelector('.skill-bar-pct');
-        const target = parseInt(fill.getAttribute('data-width'));
-        fill.style.width = target + '%';
-        let current = 0;
-        const step = Math.ceil(target / 40);
-        const interval = setInterval(() => {
-          current = Math.min(current + step, target);
-          pctEl.textContent = current + '%';
-          if (current >= target) clearInterval(interval);
-        }, 30);
-      });
-    }
-
-    const skillObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          animateSkillBars();
-          skillObserver.disconnect();
-        }
-      });
-    }, { threshold: 0.3 });
-    const skillsSection = document.getElementById('skills');
-    if (skillsSection) skillObserver.observe(skillsSection);
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.section, .act-card, .skill-bar-item').forEach(el => observer.observe(el));
   </script>
 
 </body>
