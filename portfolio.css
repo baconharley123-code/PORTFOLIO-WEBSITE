@@ -272,8 +272,7 @@ body {
   display: flex; flex-direction: column;
   gap: 2rem; max-width: 680px;
 }
-.skill-bar-item {
-}
+
 .skill-bar-header {
   display: flex; justify-content: space-between;
   align-items: baseline; margin-bottom: 8px;
